@@ -1,15 +1,16 @@
 require File.expand_path(File.dirname(__FILE__) + "/spec_helper")
 
-describe Howrah::Prawn::Commander do                 
+describe Prawn::Commander do                 
   let (:doc)       { Prawn::Document.new(:page_size => "A4") }  
 
   before(:each) do
-    @commander = Howrah::Prawn::Commander.new doc
+    @commander = Prawn::Commander.new
   end
 
   context "clean commander" do    
     it "should have a prawn document" do
-      @commander.prawn_document.should == doc
+      doc_commander = Prawn::Commander.new doc
+      doc_commander.prawn_document.should == doc
     end      
 
     context "issue 'move_down' prawn command" do
