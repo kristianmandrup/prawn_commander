@@ -1,7 +1,7 @@
 require File.expand_path(File.dirname(__FILE__) + "/spec_helper")
 
 describe Prawn::Commander do                 
-  let (:doc)       { Prawn::Document.new(:page_size => "A4") }  
+  let (:doc)       { Prawn::Document.new }  
 
   before(:each) do
     @commander = Prawn::Commander.new
@@ -17,6 +17,9 @@ describe Prawn::Commander do
       it "should add 'move_down' to command stack" do        
         @commander.prawn_command(:move_down, 10)
         @commander.prawn_commands.first.should be_command(:move_down, 10)
+        @commander.prawn_commands do |c|
+          c.first.should be_command(:move_down, 10)        
+        end
       end          
     end
 

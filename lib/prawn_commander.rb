@@ -7,6 +7,14 @@ module Prawn
       @prawn_commands = []
       @options = options
     end
+
+    def prawn_commands(&block)                                       
+      ctx = @prawn_commands
+      if block
+        block.arity < 1 ? ctx.instance_eval(&block) : block.call(ctx)
+      end            
+      ctx
+    end
     
     def raw_prawn_commands
       raw_commands = []
