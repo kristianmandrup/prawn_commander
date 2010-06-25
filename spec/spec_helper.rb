@@ -1,9 +1,10 @@
-$LOAD_PATH.unshift(File.dirname(__FILE__))
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+require 'rspec'
+require 'rspec/autorun'   
+require 'prawn'
 require 'prawn_commander'
-require 'spec'
-require 'spec/autorun'
+require 'matcher/command_matcher'
 
-Spec::Runner.configure do |config|
-  
+RSpec.configure do |config|
+  config.mock_with :mocha
+  config.include(Matchers)    
 end

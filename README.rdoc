@@ -1,6 +1,6 @@
-= prawn_commander
+= Prawn Commander
 
-Description goes here.
+Command center for prawn commands that enable logging commands before or without executing them.
 
 == Note on Patches/Pull Requests
  
