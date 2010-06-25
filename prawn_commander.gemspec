@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{prawn_commander}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kristian Mandrup"]
@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "lib/prawn_commander.rb",
+     "prawn_commander.gemspec",
      "spec/matcher/command_matcher.rb",
      "spec/prawn_commander_spec.rb",
      "spec/spec.opts",
